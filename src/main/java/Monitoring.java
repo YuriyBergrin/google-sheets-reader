@@ -24,7 +24,7 @@ public class Monitoring {
     private static String SPREADSHEET_ID = "1F7G9mG9H-mK0EYYPc1ZXF37z1qYtzbtO_1CujWCal_g";
 
     private static Credential authorize() throws IOException, GeneralSecurityException {
-        InputStream in = Monitoring.class.getResourceAsStream("/credential.json");
+        InputStream in = Monitoring.class.getResourceAsStream("/credential2.json");
         GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JacksonFactory.getDefaultInstance(), new InputStreamReader(in));
 
         List<String> scopes = Arrays.asList(SheetsScopes.SPREADSHEETS);
