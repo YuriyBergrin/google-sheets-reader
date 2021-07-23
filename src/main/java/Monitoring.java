@@ -47,7 +47,7 @@ public class Monitoring {
                 .build();
     }
 
-    public static void main(String[] args) throws IOException, GeneralSecurityException {
+    public static void main1(String[] args) throws IOException, GeneralSecurityException {
         sheetsService = getSheetsService();
         String range = "Products!A2:C5";
 
@@ -56,12 +56,13 @@ public class Monitoring {
                 .execute();
 
         List<List<Object>> values = response.getValues();
-
         if (values == null || values.isEmpty()) {
             System.out.println("No data found.");
         } else {
+            System.out.println("Name, Major");
             for (List row : values) {
-                System.out.printf("%s %s from %s\n", row.get(5), row.get(4), row.get(1));
+                // Print columns A and E, which correspond to indices 0 and 4.
+                System.out.printf("%s, %s\n", row.get(0), row.get(4));
             }
         }
     }
