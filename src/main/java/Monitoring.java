@@ -17,14 +17,14 @@ import java.security.GeneralSecurityException;
 import java.util.Arrays;
 import java.util.List;
 
-public class Reader {
+public class Monitoring {
     String link = "https://docs.google.com/spreadsheets/d/1F7G9mG9H-mK0EYYPc1ZXF37z1qYtzbtO_1CujWCal_g/edit?usp=sharing";
     private static Sheets sheetsService;
-    private static String APPLICATION_NAME = "product-monitoring-yubergrin";
+    private static String APPLICATION_NAME = "Monitoring";
     private static String SPREADSHEET_ID = "1F7G9mG9H-mK0EYYPc1ZXF37z1qYtzbtO_1CujWCal_g";
 
     private static Credential authorize() throws IOException, GeneralSecurityException {
-        InputStream in = Reader.class.getResourceAsStream("/credentials.json");
+        InputStream in = Monitoring.class.getResourceAsStream("/credential.json");
         GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JacksonFactory.getDefaultInstance(), new InputStreamReader(in));
 
         List<String> scopes = Arrays.asList(SheetsScopes.SPREADSHEETS);
