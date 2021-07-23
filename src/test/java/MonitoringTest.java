@@ -18,7 +18,7 @@ import java.security.GeneralSecurityException;
 import java.util.Arrays;
 import java.util.List;
 
-public class Monitoring {
+public class MonitoringTest {
     String link = "https://docs.google.com/spreadsheets/d/1F7G9mG9H-mK0EYYPc1ZXF37z1qYtzbtO_1CujWCal_g/edit?usp=sharing";
     private static Sheets sheetsService;
     private static String APPLICATION_NAME = "Monitoring";
@@ -46,7 +46,7 @@ public class Monitoring {
     }
 
     private static Credential authorize() throws IOException, GeneralSecurityException {
-        InputStream in = Monitoring.class.getResourceAsStream("/credential2.json");
+        InputStream in = MonitoringTest.class.getResourceAsStream("/credential2.json");
         GoogleClientSecrets clientSecrets = GoogleClientSecrets.load(JacksonFactory.getDefaultInstance(), new InputStreamReader(in));
 
         List<String> scopes = Arrays.asList(SheetsScopes.SPREADSHEETS);

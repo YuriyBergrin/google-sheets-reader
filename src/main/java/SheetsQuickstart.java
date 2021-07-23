@@ -60,12 +60,12 @@ public class SheetsQuickstart {
      * Prints the names and majors of students in a sample spreadsheet:
      * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
      */
-    public static void main(String... args) throws IOException, GeneralSecurityException {
+    public static void main1(String... args) throws IOException, GeneralSecurityException {
         // Build a new authorized API client service.
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
 //        final String spreadsheetId = "1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms";
         final String spreadsheetId = "1F7G9mG9H-mK0EYYPc1ZXF37z1qYtzbtO_1CujWCal_g";
-        final String range = "A1:C6";
+        final String range = "A1:C15";
         Sheets service = new Sheets.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
                 .setApplicationName(APPLICATION_NAME)
                 .build();
@@ -76,10 +76,9 @@ public class SheetsQuickstart {
         if (values == null || values.isEmpty()) {
             System.out.println("No data found.");
         } else {
-            System.out.println("Name, Major");
             for (List row : values) {
                 // Print columns A and E, which correspond to indices 0 and 4.
-                System.out.printf("%s, %s\n", row.get(0), row.get(4));
+                System.out.printf("%s, %s\n", row.get(0), row.get(2));
             }
         }
     }
