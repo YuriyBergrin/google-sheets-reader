@@ -9,6 +9,7 @@ import com.google.api.client.util.store.FileDataStoreFactory;
 import com.google.api.services.sheets.v4.Sheets;
 import com.google.api.services.sheets.v4.SheetsScopes;
 import com.google.api.services.sheets.v4.model.ValueRange;
+import io.qameta.allure.Step;
 import org.junit.Test;
 
 import java.io.IOException;
@@ -27,7 +28,7 @@ public class MonitoringTest {
     @Test
     public void test() throws IOException, GeneralSecurityException {
         sheetsService = getSheetsService();
-        String range = "A2:C15";
+        String range = "A:BT";
 
         ValueRange response = sheetsService.spreadsheets().values()
                 .get(SPREADSHEET_ID, range)
@@ -61,6 +62,7 @@ public class MonitoringTest {
         return credential;
     }
 
+    @Step("Получаем сервис")
     public static Sheets getSheetsService() throws IOException, GeneralSecurityException {
         Credential credential = authorize();
         return new Sheets.Builder(GoogleNetHttpTransport.newTrustedTransport(),
