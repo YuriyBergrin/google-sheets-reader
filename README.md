@@ -1,0 +1,1 @@
+https://accounts.google.com/o/oauth2/auth?access_type=offline&client_id=282121409644-iglm2l488e4ncmrptc28all8uthc6vlc.apps.googleusercontent.com&redirect_uri=http://localhost:42949/Callback&response_type=code&scope=https://www.googleapis.com/auth/spreadsheets
