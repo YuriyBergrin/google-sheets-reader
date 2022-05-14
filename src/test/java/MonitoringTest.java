@@ -20,7 +20,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * добавил в new-branch
+ * добавил в мастер more
  */
 
 public class MonitoringTest {
